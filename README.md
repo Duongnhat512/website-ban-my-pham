@@ -88,26 +88,27 @@ FE/
 ├── .gitignore
 ├── README.md
 └── package.json   
+
 ---
 
 ## ⚙️ Cài đặt & Chạy dự án
 
 ### 1. Clone repo
 ```bash
-git clone https://github.com/your-username/hasaki-clone.git
-cd hasaki-clone
+git clone https://github.com/Duongnhat512/website-ban-my-pham.git
+
 ```
 
 ### 2. Cài frontend
 ```bash
-cd client
+cd FE
 npm install
 npm run dev
 ```
 
 ### 3. Cài backend
 ```bash
-cd server
+cd BE
 npm install
 # Cấu hình .env và database
 npm run start:dev
@@ -178,5 +179,5 @@ http://localhost:3000/api
 
 ## 📧 Liên hệ
 > Tác giả: Trần Ngọc Phát hoặc Nguyễn Nhất Dương  
-> Email: [tnphat203@gmail.com] hoặc [duongnhat512@gmail.com]  
-> Github: [github.com/tnphat203] hoặc [github.com/duongnhat512]
+> Email: tnphat203@gmail.com hoặc duongnhat512@gmail.com  
+> Github: [httpgithub.com/tnphat203](https://github.com/tnphat203) hoặc [github.com/duongnhat512](https://github.com/Duongnhat512)
