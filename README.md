@@ -29,7 +29,7 @@ Dự án clone website thương mại điện tử Hasaki.vn, sử dụng ReactJ
 
 ## 📂 Cấu trúc thư mục
 
-### `client/` – React Frontend
+### `FE/` – React Frontend
 ```
 FE/
 ├── client/                      # Frontend Next.js app (nếu tách riêng, hoặc có thể ở root)
@@ -65,29 +65,28 @@ FE/
 │
 
 ### `server/` – Backend
-```
-├── server/                      # Backend Node.js Express
-│   ├── src/
-│   │   ├── controllers/         # Xử lý logic controller (route handlers)
-│   │   ├── routes/              # Định nghĩa route
-│   │   ├── middlewares/         # Middleware
-│   │   ├── services/            # Logic nghiệp vụ riêng (giao tiếp DB, API)
-│   │   ├── prisma/              # Prisma client
-│   │   │   └── client.ts        # Prisma client instance
-│   │   ├── utils/               # Hàm tiện ích backend
-│   │   ├── app.ts               # Tạo app express
-│   │   └── server.ts            # Khởi chạy server
-│   ├── prisma/
-│   │   ├── schema.prisma        # Định nghĩa schema DB Prisma
-│   │   └── migrations/          # Migrations Prisma
-│   ├── .env                    # Biến môi trường (db, jwt, ...)
-│   ├── package.json
-│   └── tsconfig.json
-│
-├── docker-compose.yml           # Docker dev/production (nếu cần)
+
+```plaintext
+server/
+├── src/
+│   ├── controllers/          # Xử lý logic controller (route handlers)
+│   ├── routes/               # Định nghĩa route
+│   ├── middlewares/          # Middleware (auth, error handler...)
+│   ├── services/             # Business logic (tương tác DB, gọi API...)
+│   ├── prisma/               # Prisma client instance
+│   │   └── client.ts
+│   ├── utils/                # Hàm tiện ích (format, xử lý chuỗi, v.v.)
+│   ├── app.ts                # Tạo app express
+│   └── server.ts             # Khởi chạy server
+├── prisma/
+│   ├── schema.prisma         # Định nghĩa schema Prisma ORM
+│   └── migrations/           # Thư mục chứa các migration
+├── .env                      # Biến môi trường (DATABASE_URL, JWT_SECRET,...)
+├── package.json
+├── tsconfig.json
+├── docker-compose.yml        # Cấu hình docker (tuỳ chọn)
 ├── .gitignore
-├── README.md
-└── package.json   
+└── README.md
 
 ---
 
@@ -180,4 +179,4 @@ http://localhost:3000/api
 ## 📧 Liên hệ
 > Tác giả: Trần Ngọc Phát hoặc Nguyễn Nhất Dương  
 > Email: tnphat203@gmail.com hoặc duongnhat512@gmail.com  
-> Github: [httpgithub.com/tnphat203](https://github.com/tnphat203) hoặc [github.com/duongnhat512](https://github.com/Duongnhat512)
+> Github: [tnphat203](https://github.com/tnphat203) hoặc [duongnhat512](https://github.com/Duongnhat512)
