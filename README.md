@@ -179,5 +179,5 @@ http://localhost:3000/api
 
 ## 📧 Liên hệ
 > Tác giả: Trần Ngọc Phát hoặc Nguyễn Nhất Dương  
-> Email: [tnphat203@gmail.com] hoặc [duongnhat512@gmail.com]  
-> Github: [github.com/tnphat203] hoặc [github.com/duongnhat512]
+> Email: tnphat203@gmail.com hoặc duongnhat512@gmail.com  
+> Github: [httpgithub.com/tnphat203](https://github.com/tnphat203) hoặc [github.com/duongnhat512](https://github.com/Duongnhat512)
