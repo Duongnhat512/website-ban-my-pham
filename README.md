@@ -1,19 +1,19 @@
 # 💄 Hasaki Clone - Fullstack E-Commerce Website
 
-Dự án clone website thương mại điện tử Hasaki.vn, sử dụng ReactJS cho frontend, NestJS/Node.js Express cho backend và PostgreSQL làm cơ sở dữ liệu.
+Dự án clone website thương mại điện tử Hasaki.vn, sử dụng ReactJS cho frontend, Node.js Express cho backend và PostgreSQL làm cơ sở dữ liệu.
 
 ## 🧰 Công nghệ sử dụng
 
 ### Frontend
-- ReactJS + Vite
-- TailwindCSS / Material UI
+- NextJS
+- TailwindCSS
 - Axios
 - React Router DOM
-- Redux Toolkit (hoặc Context API)
-- React Query (tuỳ chọn)
+- Zustand 
+
 
 ### Backend
-- NestJS hoặc ExpressJS
+- ExpressJS
 - TypeORM / Prisma
 - PostgreSQL
 - Passport + JWT Auth
@@ -31,29 +31,63 @@ Dự án clone website thương mại điện tử Hasaki.vn, sử dụng ReactJ
 
 ### `client/` – React Frontend
 ```
-client/
-├── src/
-│   ├── pages/
-│   ├── components/
-│   ├── redux/ (hoặc context/)
-│   ├── services/ (API calls)
-│   └── App.jsx
-```
-
-### `server/` – Backend (NestJS hoặc Express)
-```
-server/
-├── src/
-│   ├── modules/
-│   │   ├── auth/
-│   │   ├── users/
-│   │   ├── products/
-│   │   ├── orders/
+FE/
+├── client/                      # Frontend Next.js app (nếu tách riêng, hoặc có thể ở root)
+│   ├── app/                     # Next.js App Router (Next 13+)
+│   │   ├── layout.tsx           # Layout chung toàn app
+│   │   ├── page.tsx             # Trang chủ
+│   │   ├── products/            # Folder trang sản phẩm
+│   │   │   ├── page.tsx         # Danh sách sản phẩm
+│   │   │   └── [id]/page.tsx    # Chi tiết sản phẩm
+│   │   ├── cart/                # Giỏ hàng
+│   │   │   └── page.tsx
+│   │   ├── auth/                # Đăng nhập, đăng ký
+│   │   │   ├── login/page.tsx
+│   │   │   └── register/page.tsx
+│   │   ├── profile/             # Trang người dùng
+│   │   └── checkout/            # Thanh toán
+│   ├── components/              # Các component UI tái sử dụng
+│   │   ├── ProductCard.tsx
+│   │   ├── Navbar.tsx
 │   │   └── ...
-│   ├── main.ts
-│   └── app.module.ts
-```
+│   ├── stores/                  # Zustand stores quản lý trạng thái
+│   │   ├── cartStore.ts
+│   │   └── userStore.ts
+│   ├── services/                # API client, fetch logic
+│   │   └── productApi.ts
+│   ├── utils/                   # Các hàm tiện ích (format tiền, validate, ...)
+│   ├── hooks/                   # Custom React hooks
+│   ├── public/                  # Ảnh, fonts, favicon,...
+│   ├── styles/                  # CSS / Tailwind config
+│   ├── next.config.js           # Cấu hình Next.js
+│   ├── tailwind.config.js       # Cấu hình TailwindCSS
+│   └── tsconfig.json            # Cấu hình TypeScript
+│
 
+### `server/` – Backend
+```
+├── server/                      # Backend Node.js Express
+│   ├── src/
+│   │   ├── controllers/         # Xử lý logic controller (route handlers)
+│   │   ├── routes/              # Định nghĩa route
+│   │   ├── middlewares/         # Middleware
+│   │   ├── services/            # Logic nghiệp vụ riêng (giao tiếp DB, API)
+│   │   ├── prisma/              # Prisma client
+│   │   │   └── client.ts        # Prisma client instance
+│   │   ├── utils/               # Hàm tiện ích backend
+│   │   ├── app.ts               # Tạo app express
+│   │   └── server.ts            # Khởi chạy server
+│   ├── prisma/
+│   │   ├── schema.prisma        # Định nghĩa schema DB Prisma
+│   │   └── migrations/          # Migrations Prisma
+│   ├── .env                    # Biến môi trường (db, jwt, ...)
+│   ├── package.json
+│   └── tsconfig.json
+│
+├── docker-compose.yml           # Docker dev/production (nếu cần)
+├── .gitignore
+├── README.md
+└── package.json   
 ---
 
 ## ⚙️ Cài đặt & Chạy dự án
@@ -134,8 +168,8 @@ http://localhost:3000/api
 ---
 
 ## 📌 TODO
-- [x] Xây dựng UI
-- [x] API auth & product
+- [ ] Xây dựng UI
+- [ ] API auth & product
 - [ ] Tích hợp thanh toán (giả lập)
 - [ ] Dashboard admin
 - [ ] Docker hoá & CI/CD
@@ -143,6 +177,6 @@ http://localhost:3000/api
 ---
 
 ## 📧 Liên hệ
-> Tác giả: [Tên bạn]  
-> Email: [email@example.com]  
-> Github: [github.com/your-username]
+> Tác giả: Trần Ngọc Phát hoặc Nguyễn Nhất Dương  
+> Email: [tnphat203@gmail.com] hoặc [duongnhat512@gmail.com]  
+> Github: [github.com/tnphat203] hoặc [github.com/duongnhat512]
