@@ -88,26 +88,27 @@ FE/
 ├── .gitignore
 ├── README.md
 └── package.json   
+
 ---
 
 ## ⚙️ Cài đặt & Chạy dự án
 
 ### 1. Clone repo
 ```bash
-git clone https://github.com/your-username/hasaki-clone.git
-cd hasaki-clone
+git clone https://github.com/Duongnhat512/website-ban-my-pham.git
+
 ```
 
 ### 2. Cài frontend
 ```bash
-cd client
+cd FE
 npm install
 npm run dev
 ```
 
 ### 3. Cài backend
 ```bash
-cd server
+cd BE
 npm install
 # Cấu hình .env và database
 npm run start:dev
